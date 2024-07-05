@@ -15,7 +15,7 @@ form.addEventListener('submit', function(event){
 
     document.getElementById('infos').classList.remove('hidden');
     
-     // change to swtich case
+     // change to swtich case heheheh
     if(imc < 18.5){
         description = 'Cuidado!! Você está abaixo do peso!';
     } else if(imc >= 18.5 && imc <= 25){
