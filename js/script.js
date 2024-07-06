@@ -13,8 +13,6 @@ form.addEventListener('submit', function(event){
     event.preventDefault();
     
     const weight = document.getElementById('weight').value;
-    const height = document.getElementById('height').value;
-
     const imc = (weight / (height*height)).toFixed(2);
 
     const value = document.getElementById('value');
@@ -25,22 +23,28 @@ form.addEventListener('submit', function(event){
     document.getElementById('infos').classList.remove('hidden');
     
     switch(true){
-        case imc < underWeight.min:
+        case 0:
+            imc < underWeight.min;
             description = 'Cuidado! Você está abaixo do peso.'
             break
-        case imc >= bmi_values.normalWeight.min && imc <= normalWeight.max:
+        case 1: 
+            imc >= bmi_values.normalWeight.min && imc <= normalWeight.max
             description = 'Você está no seu peso ideal.'
             break
-        case imc >= bmi_values.overWeight.min && imc <= overWeight.max:
+        case 2:
+            imc >= bmi_values.overWeight.min && imc <= overWeight.max
             description = 'Você está acima do seu peso ideal.'
             break
-        case imc >= bmi_values.obesityGradeI.min && imc <= obesityGradeI.max:
+        case 3:
+            imc >= bmi_values.obesityGradeI.min && imc <= obesityGradeI.max
             description = 'Obesidade Grau I'
             break
-        case imc >= bmi_values.obesityGradeII.min && imc <= obesityGradeII.max:
+        case 4:
+            imc >= bmi_values.obesityGradeII.min && imc <= obesityGradeII.max
             description = 'Obesidade Grau II'
             break
-        case imc >= bmi_values.obesityGradeIII.min:
+        case 5:
+            imc >= bmi_values.obesityGradeIII.min
             description = 'Obesidade Grau III (Mórbida)'
             break
     }
