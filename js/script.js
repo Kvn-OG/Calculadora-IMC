@@ -27,8 +27,10 @@ form.addEventListener('submit', function(event){
         case imc < bmi_values.underWeight.min:
             description = 'Cuidado! Você está abaixo do peso.'
             break
-        case  imc >= bmi_values.normalWeight.min && imc <= bmi_values.normalWeight.max:
+        case imc >= bmi_values.normalWeight.min && imc <= bmi_values.normalWeight.max:
             description = 'Você está no seu peso ideal.'
+            value.classList.remove('attention');
+            value.classList.add('normal');
             break
         case imc >= bmi_values.overWeight.min && imc <= bmi_values.overWeight.max:
             description = 'Você está acima do seu peso ideal.'
