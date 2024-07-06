@@ -44,6 +44,8 @@ form.addEventListener('submit', function(event){
         case imc >= bmi_values.obesityGradeIII.min:
             description = 'Obesidade Grau III (Mórbida)'
             break
+        default:
+            description = 'Cálculo IMC inválido'
     }
 
     value.textContent = imc.replace('.',',');
